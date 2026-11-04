@@ -1,8 +1,186 @@
+export type ProjectText = {
+  id: string;
+  title: string;
+  tag: string;
+  summary: string;
+  bullets: string[];
+  learned: string;
+  stats: { value: string; label: string }[];
+};
+
 const lorem_fr =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
 
 const lorem_en =
   "This is temporary placeholder text used to test scrolling. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+
+const projectsFr: ProjectText[] = [
+  {
+    id: "dofus",
+    title: "Recoder Dofus en C",
+    tag: "Projet d'étude · 2021",
+    summary:
+      "Un RPG tactique complet, codé en équipe en un mois, juste après avoir appris le langage C.",
+    bullets: [
+      "Déplacements, sorts, effets, NPC et leur IA, modification de terrain",
+      "Travail en équipe avec versionning GitHub",
+      "Tous les bonus atteints, attentes du jury largement dépassées",
+    ],
+    learned:
+      "Ce que ça m'a appris : structurer un gros projet en C, se répartir le travail en équipe et aller au bout par passion.",
+    stats: [],
+  },
+  {
+    id: "simcity",
+    title: "Recoder Sim City en C",
+    tag: "Projet d'étude · 2022",
+    summary:
+      "Un jeu de gestion de ville construit autour de la théorie des graphes, projet de fin de semestre.",
+    bullets: [
+      "Argent, ressources, alimentation en eau et en électricité de chaque bâtiment",
+      "Câblage souterrain : relier les centrales aux habitations grâce aux graphes",
+      "Développement en équipe avec GitHub, tous les bonus atteints",
+    ],
+    learned:
+      "Ce que ça m'a appris : appliquer un concept théorique (les graphes) à un problème concret et visuel.",
+    stats: [],
+  },
+  {
+    id: "cinema",
+    title: "Site de cinéma en Java",
+    tag: "Projet d'étude · 2023",
+    summary:
+      "Un site de réservation de séances entièrement en Java, avec deux interfaces : consommateur et administrateur.",
+    bullets: [
+      "Espace admin : ajout de films et de séances, modification des horaires, gestion des utilisateurs",
+      "Espace consommateur : réservation de séances",
+      "Projet de groupe sur 1 mois, versionning GitHub",
+    ],
+    learned:
+      "Ce que ça m'a appris : concevoir une application à plusieurs rôles et travailler proprement en groupe avec Git.",
+    stats: [],
+  },
+  {
+    id: "coverage",
+    title: "Code Coverage : projet de fin d'études",
+    tag: "Projet de fin d'études · 6 mois",
+    summary:
+      "Comment automatiser la couverture de code exigée par la norme aéronautique DO-178, dans un environnement de développement basé modèle ?",
+    bullets: [
+      "Contexte : les logiciels embarqués critiques doivent prouver qu'ils sont entièrement testés, une phase aujourd'hui longue et manuelle",
+      "Projet proposé par une étudiante ECE en alternance chez Airbus Helicopters",
+      "Après l'étude de l'existant, nous avons ciblé MATLAB/Simulink et son outil Simulink Coverage",
+      "Résultat : intégrée aux tests unitaires, la couverture est fiable, reproductible et cohérente avec une analyse indépendante",
+    ],
+    learned:
+      "Ce que ça m'a appris : mener une étude sur la durée, cadrer un besoin avec un client et travailler dans un cadre normatif exigeant.",
+    stats: [],
+  },
+  {
+    id: "abyssalcraft",
+    title: "AbyssalCraft : un animé recréé dans Minecraft",
+    tag: "Projet personnel · depuis 2024",
+    summary:
+      "Recréation de l'univers d'un animé avec des mods et des datapacks, en collaboration avec 6 personnes. Je suis chef de projet et seul développeur.",
+    bullets: [
+      "Réécriture d'une grande partie du code de base de Minecraft pour en changer les mécaniques",
+      "Programmation orientée objet en Java, et code in-game de Minecraft",
+      "Gestion de milliers de fichiers JSON et de clés de traduction",
+    ],
+    learned:
+      "Ce que ça m'a appris : piloter un projet de longue durée, lire et modifier un gros code existant, et coordonner artistes et développement.",
+    stats: [
+      { value: "3 700", label: "followers sur le compte Twitter du projet" },
+      { value: "30 000+", label: "lignes de code, toutes écrites par moi" },
+      { value: "300+", label: "modèles 3D" },
+      { value: "800+", label: "textures" },
+    ],
+  },
+];
+
+const projectsEn: ProjectText[] = [
+  {
+    id: "dofus",
+    title: "Rebuilding Dofus in C",
+    tag: "Study project · 2021",
+    summary:
+      "A complete tactical RPG, built as a team in one month, right after learning the C language.",
+    bullets: [
+      "Movement, spells, effects, NPCs and their AI, terrain editing",
+      "Teamwork with GitHub versioning",
+      "All bonuses achieved, jury expectations far exceeded",
+    ],
+    learned:
+      "What I learned: structuring a large C project, sharing work within a team and seeing it through out of passion.",
+    stats: [],
+  },
+  {
+    id: "simcity",
+    title: "Rebuilding Sim City in C",
+    tag: "Study project · 2022",
+    summary:
+      "A city-management game built around graph theory, end-of-semester project.",
+    bullets: [
+      "Money, resources, water and electricity supply for every building",
+      "Underground cabling: linking power plants to homes using graphs",
+      "Team development with GitHub, all bonuses achieved",
+    ],
+    learned:
+      "What I learned: applying a theoretical concept (graphs) to a concrete, visual problem.",
+    stats: [],
+  },
+  {
+    id: "cinema",
+    title: "Cinema website in Java",
+    tag: "Study project · 2023",
+    summary:
+      "A screening-booking website written entirely in Java, with two interfaces: customer and administrator.",
+    bullets: [
+      "Admin area: add films and screenings, change schedules, manage users",
+      "Customer area: book screenings",
+      "Group project over 1 month, GitHub versioning",
+    ],
+    learned:
+      "What I learned: designing an application with several user roles and working cleanly in a group with Git.",
+    stats: [],
+  },
+  {
+    id: "coverage",
+    title: "Code Coverage: final-year project",
+    tag: "Final-year project · 6 months",
+    summary:
+      "How can the code coverage required by the DO-178 aviation standard be automated in a model-based development environment?",
+    bullets: [
+      "Context: critical embedded software must prove it is fully tested, a phase that is currently long and manual",
+      "Project proposed by an ECE work-study student at Airbus Helicopters",
+      "After surveying existing solutions, we focused on MATLAB/Simulink and its Simulink Coverage tool",
+      "Result: integrated into unit tests, coverage is reliable, reproducible and consistent with an independent analysis",
+    ],
+    learned:
+      "What I learned: running a study over time, scoping a need with a client and working within a demanding standard.",
+    stats: [],
+  },
+  {
+    id: "abyssalcraft",
+    title: "AbyssalCraft: an anime recreated in Minecraft",
+    tag: "Personal project · since 2024",
+    summary:
+      "Recreating an anime's universe with mods and datapacks, in collaboration with 6 people. I am the project lead and the only developer.",
+    bullets: [
+      "Rewrote a large part of Minecraft's base code to change its mechanics",
+      "Object-oriented programming in Java, and Minecraft's in-game code",
+      "Managing thousands of JSON files and translation keys",
+    ],
+    learned:
+      "What I learned: leading a long-running project, reading and modifying a large existing codebase, and coordinating artists and development.",
+    stats: [
+      { value: "3,700", label: "followers on the project's Twitter account" },
+      { value: "30,000+", label: "lines of code, all written by me" },
+      { value: "300+", label: "3D models" },
+      { value: "800+", label: "textures" },
+    ],
+  },
+];
 
 export const translations = {
   fr: {
@@ -99,9 +277,7 @@ export const translations = {
           period: "Janvier – février 2023",
           role: "Développeur web",
           company: "LOXAM, La Défense",
-          bullets: [
-            "Logiciel interne générant des certificats de conformité",
-          ],
+          bullets: ["Logiciel interne générant des certificats de conformité"],
           tech: ["Web", "Bootstrap"],
         },
       ],
@@ -125,6 +301,18 @@ export const translations = {
           desc: "",
         },
       ],
+    },
+    projects: {
+      items: projectsFr,
+      ongoing: "En cours",
+      downloads: {
+        rar: "Télécharger le projet (.RAR)",
+        zip: "Télécharger le projet (.ZIP)",
+        pdf: "Télécharger la synthèse (.PDF)",
+      },
+      prev: "Image précédente",
+      next: "Image suivante",
+      goTo: "Aller à l'image",
     },
     lorem: lorem_fr,
   },
@@ -250,6 +438,18 @@ export const translations = {
           desc: "",
         },
       ],
+    },
+    projects: {
+      items: projectsEn,
+      ongoing: "Ongoing",
+      downloads: {
+        rar: "Download the project (.RAR)",
+        zip: "Download the project (.ZIP)",
+        pdf: "Download the summary (.PDF)",
+      },
+      prev: "Previous image",
+      next: "Next image",
+      goTo: "Go to image",
     },
     lorem: lorem_en,
   },
