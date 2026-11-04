@@ -53,7 +53,7 @@ export default function Situation() {
             📄 {s.downloadCv}
           </a>
           <a
-            href="/lettre_recommandation.pdf"
+            href="/lettre_recommandation_stage_axel_flament.pdf"
             download
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-600 px-5 py-3 font-semibold text-slate-100 transition-colors hover:bg-slate-800"
           >
