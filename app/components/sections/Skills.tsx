@@ -24,20 +24,21 @@ const GROUPS: {
       "CSS",
       "JavaScript",
       "Makefile",
-      "Bash / Shell",
+      "Batch / Bash / Shell",
+      "Markdown"
     ],
   },
   {
     key: "frameworks",
     icon: "🧩",
-    items: ["Django", "API REST", "SDL3", "Asio", "Bootstrap"],
+    items: ["Django", "API REST", "SDL2 / SDL3", "Asio", "Bootstrap", "Requests", "FastAPI", "Pytest", "CMake"],
   },
   {
     key: "tools",
     icon: "🛠️",
     items: [
       "VS Code",
-      "Git",
+      "Git / Github / GitLab",
       "Linux",
       "Anaconda",
       "PyCharm",

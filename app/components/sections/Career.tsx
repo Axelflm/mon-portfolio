@@ -1,6 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "../LanguageProvider";
+
+// Une image par stage, dans le même ordre que `experiences` (du plus récent au plus ancien)
+const EXPERIENCE_IMAGES = [
+  "/images/stage1.jpg", // Thales SIX GTS
+  "/images/stage2.jpg", // Thales DMS
+  "/images/stage3.jpg", // Mairie
+  "/images/stage4.jpg", // LOXAM
+];
 
 export default function Career() {
   const { t } = useLanguage();
@@ -13,7 +22,7 @@ export default function Career() {
     >
       <h2 className="mb-5 text-3xl font-bold">{t.nav.career}</h2>
 
-      <div className="max-w-3xl space-y-8">
+      <div className="max-w-4xl space-y-8">
         {/* Expériences : frise verticale */}
         <div>
           <h3 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
@@ -34,34 +43,53 @@ export default function Career() {
                   }`}
                 />
 
-                <div className="flex flex-wrap items-center gap-2">
-                  <p className="text-sm text-slate-400">{exp.period}</p>
-                  {i === 0 && (
-                    <span className="rounded-full bg-sky-500/15 px-2 py-0.5 text-xs font-medium text-sky-300 ring-1 ring-sky-500/40">
-                      {c.latest}
-                    </span>
+                <div className="flex flex-col gap-3 sm:flex-row sm:gap-4">
+                  {/* Image du stage */}
+                  {EXPERIENCE_IMAGES[i] && (
+                    <div className="relative h-36 w-full shrink-0 overflow-hidden rounded-lg border border-slate-700 bg-slate-900 sm:h-28 sm:w-36">
+                      <Image
+                        src={EXPERIENCE_IMAGES[i]}
+                        alt={exp.company}
+                        fill
+                        sizes="(min-width: 640px) 144px, 100vw"
+                        className="object-cover"
+                      />
+                    </div>
                   )}
-                </div>
 
-                <h4 className="mt-1 text-lg font-semibold text-white">
-                  {exp.role} <span className="text-sky-400">· {exp.company}</span>
-                </h4>
+                  {/* Texte du stage */}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <p className="text-sm text-slate-400">{exp.period}</p>
+                      {i === 0 && (
+                        <span className="rounded-full bg-sky-500/15 px-2 py-0.5 text-xs font-medium text-sky-300 ring-1 ring-sky-500/40">
+                          {c.latest}
+                        </span>
+                      )}
+                    </div>
 
-                <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-300 marker:text-slate-600">
-                  {exp.bullets.map((b) => (
-                    <li key={b}>{b}</li>
-                  ))}
-                </ul>
+                    <h4 className="mt-1 text-lg font-semibold text-white">
+                      {exp.role}{" "}
+                      <span className="text-sky-400">· {exp.company}</span>
+                    </h4>
 
-                <div className="mt-3 flex flex-wrap gap-1.5">
-                  {exp.tech.map((tech) => (
-                    <span
-                      key={tech}
-                      className="rounded-md bg-slate-800 px-2 py-0.5 text-xs text-slate-300"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+                    <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-300 marker:text-slate-600">
+                      {exp.bullets.map((b) => (
+                        <li key={b}>{b}</li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-3 flex flex-wrap gap-1.5">
+                      {exp.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className="rounded-md bg-slate-800 px-2 py-0.5 text-xs text-slate-300"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </li>
             ))}
