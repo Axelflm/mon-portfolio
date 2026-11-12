@@ -36,6 +36,10 @@ export default function About() {
             <span className="font-bold text-sky-400">{t.about.valueLabel}</span>{" "}
             {t.about.value}
           </p>
+          <p className="text-slate-200">
+            <span className="font-bold text-sky-400">{t.about.valueLabel2}</span>{" "}
+            {t.about.value2}
+          </p>
         </div>
       </div>
     </section>

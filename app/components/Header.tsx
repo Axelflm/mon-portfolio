@@ -6,7 +6,7 @@ import { useLanguage } from "./LanguageProvider";
 import type { Dict } from "../lib/translations";
 
 // À remplacer par tes vraies infos
-const FULL_NAME = "FLAMENT-RICH Axel";
+const FULL_NAME = "FLAMENT Axel";
 const EMAIL = "axflament@gmail.com";
 const PHONE = "07 66 04 82 74";
 const LINKEDIN_URL = "https://www.linkedin.com/in/axel-flament-a9b350259/";

@@ -21,7 +21,7 @@ const PROJECTS: {
   {
     id: "dofus",
     images: buildImages("dofus_arena", 7, "png"),
-    tech: ["C", "GitHub", "Travail d'équipe"],
+    tech: ["C", "GitHub", "Travail d'équipe", "Allocation de mémoire dynamique"],
     download: {
       href: "/project/minecraft_mobs_arena_project.rar",
       kind: "rar",
@@ -30,25 +30,25 @@ const PROJECTS: {
   {
     id: "simcity",
     images: buildImages("ece_city", 5, "png"),
-    tech: ["C", "Théorie des graphes", "GitHub"],
+    tech: ["C", "Théorie des graphes", "GitHub", "Travail d'équipe"],
     download: { href: "/project/ece_city_project.rar", kind: "rar" },
   },
   {
     id: "cinema",
     images: buildImages("cinema_website_java", 4, "png"),
-    tech: ["Java", "GitHub"],
+    tech: ["Java", "GitHub", "Travail d'équipe", "POO"],
     download: { href: "/project/cinema_website_java_project.zip", kind: "zip" },
   },
   {
     id: "coverage",
     images: buildImages("code_coverage", 4, "png"), // passe à 5 si tu as bien 5 images
-    tech: ["MATLAB", "Simulink", "DO-178"],
+    tech: ["MATLAB", "Simulink", "DO-178", "Secteur de la Défense"],
     download: { href: "/project/Synthese_code_coverage.pdf", kind: "pdf" },
   },
   {
     id: "abyssalcraft",
     images: buildImages("abyssalcraft", 8, "png"),
-    tech: ["Java", "Minecraft", "Datapacks", "JSON"],
+    tech: ["Java", "Résoudre les problèmes", "Datapacks", "JSON", "POO", "Team Leader"],
     ongoing: true,
   },
 ];
